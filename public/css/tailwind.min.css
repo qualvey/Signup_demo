@@ -59424,3 +59424,10 @@ video {
     justify-content: center;
     align-items: center;
 }
+body{
+    position: relative;
+}
+footer{
+    position: absolute;
+    bottom: 40px;
+}
