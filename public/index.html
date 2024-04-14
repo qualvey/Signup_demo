@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>注册页面作业</title>
+    <link rel="stylesheet" href="css/tailwind.min.css">
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <style>
+        .dowebok .weixin, .dowebok .weibo {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-size: cover;
+        }
+        .gender input[type="radio"] {
+  display: none;
+}
+
+.gender input[type="radio"] + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+.gender input[type="radio"] + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #aaa;
+  /* border-radius: 50%; */
+}
+
+.gender input[type="radio"]:checked + label:before {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: .4em;
+}
+
+.gender input[type="radio"]:checked + label:after {
+  content: '\2713'; /* Unicode checkmark symbol */
+  position: absolute;
+  left: 3px;
+  top: 1px;
+  color: #fff;
+  font-size: 12px;
+}
+.birth {
+    border-radius: .5em;
+    display: flex;
+    justify-content: space-between;
+    margin: 1.4em 0;
+    padding: .5em;
+}
+.gender,.birth {
+   
+    font-size: .875rem;
+    box-sizing: border-box;
+    padding: .7rem 2rem;
+    border: 2px solid  #cbd5e0;
+    border-radius: .5em;
+    display: flex;
+    justify-content: space-between;
+    margin: 1.4em 0;
+    /* padding: .5em; */
+} 
+.border-gray-200 {
+    border: 2px solid  #cbd5e0;
+}
+.sm\:m-20 {
+    margin-top: 3rem;
+}
+h1 {
+   
+    background: linear-gradient(to right, rgb(23, 194, 200), rgb(194, 207, 18));
+        -webkit-background-clip: text;
+        color: transparent;
+    /* font-size: 48px;
+    background: linear-gradient(to right, #ff0000, #607c60, #0000ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+/* .birth{
+    justify-content: flex-start;
+} */
+
+    </style>
+</head>
+
+<body class="min-h-screen bg-gray-100 text-gray-900 flex justify-center dowebok">
+    <div class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+        <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+            <div class="mt-12 flex flex-col items-center">
+                <h1 class="text-2xl xl:text-3xl font-extrabold">用户注册</h1>
+                <div class="w-full flex-1 mt-8">
+
+                    <!-- <div class="flex flex-col items-center">
+                        <button class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
+                            <div class="weixin"></div>
+                            <span class="ml-4">使用微信登录</span>
+                        </button>
+                        <button class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5">
+                            <div class="weibo"></div>
+                            <span class="ml-4">使用微博登录</span>
+                        </button>
+                    </div> -->
+
+                    <div class="my-12 border-b text-center">
+                        <div class="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">使用电子邮箱注册</div>
+                    </div>
+
+                    <div class="mx-auto max-w-xs">
+                        <input class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white" type="email" placeholder="电子邮箱" />
+                        <input class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5" type="password" placeholder="密码" />
+                        <input class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5" type="password" placeholder="确认密码" />
+                        <input class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5" type="password" placeholder="用户名:李龙涛" />
+                        <div class="gender w-full bg-gray-100">
+                            <input type="radio" id="option1" name="options">
+                            <label for="option1">男</label><br>
+                            
+                            <input type="radio" id="option2" name="options">
+                            <label for="option2">女</label><br>
+                            
+                            <input type="radio" id="option3" name="options">
+                            <label for="option3">不愿透露</label><br>
+                          </div>
+                        <div class="w-full bg-gray-100 birth">
+                            <label for="birthdate">出生日期：</label>
+                            <!-- <input type="date" id="birthdate" name="birthdate" class="w-f"> -->
+                             <div id="root"></div>
+                        </div>
+                        <button class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                            <span class="ml-3">注 册</span>
+                        </button>
+                        <p class="mt-6 text-xs text-gray-600 text-center">我同意并遵守服务协议</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-1 bg-indigo-100 text-center hidden lg:flex">
+            <div class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat" style="background-image: url('images/dowebok.svg');"></div>
+        </div>
+    </div>
+   
+</body>
+</html>
